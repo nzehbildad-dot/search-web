@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Search Web helps you discover clear, readable articles from Wikipedia across science, history, technology, and more.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0d120f">
+    <meta property="og:title" content="Search Web">
+    <meta property="og:description" content="Find your next rabbit hole with readable articles from the public web of knowledge.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="search-web-logo.svg">
+    <link rel="apple-touch-icon" href="search-web-logo.svg">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Search Web</title>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="./index.html" aria-label="Search Web home">
+                <span class="brand-mark" aria-hidden="true"><span>S</span><span>W</span></span>
+                <span class="brand-name">Search Web</span>
+            </a>
+            <p class="header-date">YOUR NEXT DISCOVERY</p>
+        </div>
+    </header>
+
+    <nav class="section-nav" aria-label="Sections">
+        <div class="content-width nav-inner">
+            <button class="active-section" type="button" data-topic="">Search</button>
+            <button type="button" data-topic="popular topics">Explore</button>
+            <button type="button" data-topic="science">Science</button>
+            <button type="button" data-topic="history">History</button>
+            <button type="button" data-topic="technology">Tech</button>
+        </div>
+    </nav>
+
+    <main class="content-width main-content">
+        <section class="search-intro" aria-labelledby="page-title">
+            <p class="eyebrow">DISCOVERY MODE</p>
+            <h1 id="page-title">Find your next rabbit hole.</h1>
+            <p class="intro-copy">Search the open web of knowledge and jump straight into something worth exploring.</p>
+            <form id="search-form" class="search-form">
+                <label class="sr-only" for="search-input">Search for a topic</label>
+                <input id="search-input" name="query" type="search" placeholder="Try “black holes” or “Nelson Mandela”" autocomplete="off" required>
+                <button type="submit">Search <span aria-hidden="true">&#8594;</span></button>
+            </form>
+            <p class="search-hint">LIVE KNOWLEDGE SEARCH · POWERED BY WIKIPEDIA</p>
+        </section>
+
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+
+        <section id="answer-section" class="answer-section" hidden aria-labelledby="answer-heading">
+            <div class="section-heading">
+                <p class="eyebrow">QUICK ANSWER</p>
+                <span id="result-count" class="result-count"></span>
+            </div>
+            <article class="answer-card">
+                <div>
+                    <h2 id="answer-heading"></h2>
+                    <p id="answer-text"></p>
+                    <a id="source-link" href="#" target="_blank" rel="noreferrer">Read the full article <span aria-hidden="true">&#8594;</span></a>
+                </div>
+            </article>
+        </section>
+
+        <section id="results-section" class="results-section" hidden aria-labelledby="results-heading">
+            <div class="section-heading">
+                <p class="eyebrow" id="results-heading">MORE TO EXPLORE</p>
+                <span class="rule" aria-hidden="true"></span>
+            </div>
+            <div id="results-list" class="results-list"></div>
+        </section>
+
+        <section id="not-found-section" class="not-found-section" hidden aria-labelledby="not-found-heading">
+            <p class="not-found-code">404</p>
+            <h2 id="not-found-heading">No signal found.</h2>
+            <p>That topic is outside our current map. Try a different phrase or search something broader.</p>
+            <button id="try-again-button" type="button">Try another search <span aria-hidden="true">&#8594;</span></button>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="content-width footer-inner">
+            <span class="brand-mark small" aria-hidden="true"><span>S</span><span>W</span></span>
+            <span>Search Web</span>
+            <span class="footer-note">Created by Aspect AI</span>
+        </div>
+    </footer>
+</body>
+</html>
